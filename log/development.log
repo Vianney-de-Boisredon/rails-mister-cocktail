@@ -5446,3 +5446,46 @@ Migrating to AddPhotoToArticles (20181123111004)
   ↳ bin/rails:9
   [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(672984542578094145)[0m
   ↳ bin/rails:9
+  [1m[35m (205.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(672984542578094145)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddPhotoToArticles (20181123111004)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (12.9ms)[0m  [1m[35mALTER TABLE "articles" ADD "photo" character varying[0m
+  ↳ db/migrate/20181123111004_add_photo_to_articles.rb:3
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(672984542578094145)[0m
+  ↳ bin/rails:9
+  [1m[35m (206.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(672984542578094145)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddPhotoToArticles (20181123111004)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(672984542578094145)[0m
+  ↳ bin/rails:9
+  [1m[35m (206.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(672984542578094145)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddPhotoToCocktails (20181123111004)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (21.3ms)[0m  [1m[35mALTER TABLE "cocktails" ADD "photo" character varying[0m
+  ↳ db/migrate/20181123111004_add_photo_to_cocktails.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (4.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181123111004"]]
+  ↳ bin/rails:9
+  [1m[35m (190.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (7.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(672984542578094145)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
