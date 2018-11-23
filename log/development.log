@@ -9659,3 +9659,192 @@ Processing by CocktailsController#index as HTML
 Completed 200 OK in 91ms (Views: 77.7ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/cocktails" for 127.0.0.1 at 2018-11-23 17:12:51 +0100
+Processing by CocktailsController#index as HTML
+  Rendering cocktails/index.html.erb within layouts/application
+  [1m[36mCocktail Load (1.1ms)[0m  [1m[34mSELECT "cocktails".* FROM "cocktails"[0m
+  ↳ app/views/cocktails/index.html.erb:5
+  Rendered cocktails/index.html.erb within layouts/application (12.7ms)
+  Rendered layouts/_navbar.html.erb (6.7ms)
+Completed 200 OK in 147ms (Views: 129.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/cocktails" for 127.0.0.1 at 2018-11-23 17:46:52 +0100
+Processing by CocktailsController#index as HTML
+  Rendering cocktails/index.html.erb within layouts/application
+  [1m[36mCocktail Load (0.9ms)[0m  [1m[34mSELECT "cocktails".* FROM "cocktails"[0m
+  ↳ app/views/cocktails/index.html.erb:5
+  Rendered cocktails/index.html.erb within layouts/application (27.6ms)
+  Rendered layouts/_navbar.html.erb (11.3ms)
+Completed 200 OK in 282ms (Views: 270.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/cocktails/8" for 127.0.0.1 at 2018-11-23 17:47:11 +0100
+Processing by CocktailsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mCocktail Load (0.5ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/cocktails_controller.rb:27
+  Rendering cocktails/show.html.erb within layouts/application
+  [1m[36mDose Load (0.6ms)[0m  [1m[34mSELECT "doses".* FROM "doses" WHERE "doses"."cocktail_id" = $1[0m  [["cocktail_id", 8]]
+  ↳ app/views/cocktails/show.html.erb:12
+  [1m[36mIngredient Load (0.8ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 164], ["LIMIT", 1]]
+  ↳ app/views/cocktails/show.html.erb:15
+  Rendered cocktails/show.html.erb within layouts/application (21.8ms)
+  Rendered layouts/_navbar.html.erb (6.4ms)
+Completed 200 OK in 198ms (Views: 177.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/cocktails" for 127.0.0.1 at 2018-11-23 17:47:13 +0100
+Processing by CocktailsController#index as HTML
+  Rendering cocktails/index.html.erb within layouts/application
+  [1m[36mCocktail Load (1.6ms)[0m  [1m[34mSELECT "cocktails".* FROM "cocktails"[0m
+  ↳ app/views/cocktails/index.html.erb:5
+  Rendered cocktails/index.html.erb within layouts/application (12.6ms)
+  Rendered layouts/_navbar.html.erb (7.7ms)
+Completed 200 OK in 176ms (Views: 160.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/cocktails/9" for 127.0.0.1 at 2018-11-23 17:47:15 +0100
+Processing by CocktailsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mCocktail Load (0.9ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/cocktails_controller.rb:27
+  Rendering cocktails/show.html.erb within layouts/application
+  [1m[36mDose Load (0.6ms)[0m  [1m[34mSELECT "doses".* FROM "doses" WHERE "doses"."cocktail_id" = $1[0m  [["cocktail_id", 9]]
+  ↳ app/views/cocktails/show.html.erb:12
+  Rendered cocktails/show.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_navbar.html.erb (4.8ms)
+Completed 200 OK in 147ms (Views: 139.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/cocktails/9/doses/new" for 127.0.0.1 at 2018-11-23 17:47:16 +0100
+Processing by DosesController#new as HTML
+  Parameters: {"cocktail_id"=>"9"}
+  [1m[36mCocktail Load (2.4ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/doses_controller.rb:5
+  Rendering doses/new.html.erb within layouts/application
+  [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/views/doses/new.html.erb:5
+  Rendered doses/new.html.erb within layouts/application (47.8ms)
+  Rendered layouts/_navbar.html.erb (4.8ms)
+Completed 200 OK in 236ms (Views: 215.4ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/cocktails/9/doses" for 127.0.0.1 at 2018-11-23 17:47:24 +0100
+Processing by DosesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CHw/jLt2RKaFsg6OVG+EgQW/AECewZq32moQQtiUpcm8DlGsTKd01dpi1Z5wXVq59akzdmCpOG2CQ2h7g+qL/Q==", "dose"=>{"description"=>"4cl", "ingredient_id"=>"165"}, "commit"=>"Create Dose", "cocktail_id"=>"9"}
+  [1m[36mCocktail Load (0.5ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/doses_controller.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/doses_controller.rb:13
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 165], ["LIMIT", 1]]
+  ↳ app/controllers/doses_controller.rb:13
+  [1m[36mDose Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "doses" WHERE "doses"."cocktail_id" = $1 AND "doses"."ingredient_id" = $2 LIMIT $3[0m  [["cocktail_id", 9], ["ingredient_id", 165], ["LIMIT", 1]]
+  ↳ app/controllers/doses_controller.rb:13
+  [1m[36mDose Create (3.2ms)[0m  [1m[32mINSERT INTO "doses" ("description", "ingredient_id", "cocktail_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "4cl"], ["ingredient_id", 165], ["cocktail_id", 9], ["created_at", "2018-11-23 16:47:24.361824"], ["updated_at", "2018-11-23 16:47:24.361824"]]
+  ↳ app/controllers/doses_controller.rb:13
+  [1m[35m (194.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/doses_controller.rb:13
+Redirected to http://localhost:3000/cocktails/9
+Completed 302 Found in 218ms (ActiveRecord: 199.9ms)
+
+
+Started GET "/cocktails/9" for 127.0.0.1 at 2018-11-23 17:47:24 +0100
+Processing by CocktailsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mCocktail Load (0.4ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/cocktails_controller.rb:27
+  Rendering cocktails/show.html.erb within layouts/application
+  [1m[36mDose Load (0.4ms)[0m  [1m[34mSELECT "doses".* FROM "doses" WHERE "doses"."cocktail_id" = $1[0m  [["cocktail_id", 9]]
+  ↳ app/views/cocktails/show.html.erb:12
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 165], ["LIMIT", 1]]
+  ↳ app/views/cocktails/show.html.erb:15
+  Rendered cocktails/show.html.erb within layouts/application (19.6ms)
+  Rendered layouts/_navbar.html.erb (5.4ms)
+Completed 200 OK in 123ms (Views: 118.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/cocktails/9" for 127.0.0.1 at 2018-11-23 17:48:28 +0100
+Processing by CocktailsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mCocktail Load (0.4ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/cocktails_controller.rb:27
+  Rendering cocktails/show.html.erb within layouts/application
+  [1m[36mDose Load (0.5ms)[0m  [1m[34mSELECT "doses".* FROM "doses" WHERE "doses"."cocktail_id" = $1[0m  [["cocktail_id", 9]]
+  ↳ app/views/cocktails/show.html.erb:12
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 165], ["LIMIT", 1]]
+  ↳ app/views/cocktails/show.html.erb:15
+  Rendered cocktails/show.html.erb within layouts/application (8.7ms)
+  Rendered layouts/_navbar.html.erb (7.6ms)
+Completed 200 OK in 140ms (Views: 135.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/cocktails/9/doses/new" for 127.0.0.1 at 2018-11-23 17:48:31 +0100
+Processing by DosesController#new as HTML
+  Parameters: {"cocktail_id"=>"9"}
+  [1m[36mCocktail Load (0.6ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/doses_controller.rb:5
+  Rendering doses/new.html.erb within layouts/application
+  [1m[36mIngredient Load (0.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/views/doses/new.html.erb:5
+  Rendered doses/new.html.erb within layouts/application (21.3ms)
+  Rendered layouts/_navbar.html.erb (4.6ms)
+Completed 200 OK in 127ms (Views: 110.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/cocktails/9/doses/new" for 127.0.0.1 at 2018-11-23 17:48:32 +0100
+Processing by DosesController#new as HTML
+  Parameters: {"cocktail_id"=>"9"}
+  [1m[36mCocktail Load (0.3ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/doses_controller.rb:5
+  Rendering doses/new.html.erb within layouts/application
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/views/doses/new.html.erb:5
+  Rendered doses/new.html.erb within layouts/application (19.5ms)
+  Rendered layouts/_navbar.html.erb (3.7ms)
+Completed 200 OK in 107ms (Views: 101.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/cocktails" for 127.0.0.1 at 2018-11-23 17:49:03 +0100
+Processing by CocktailsController#index as HTML
+  Rendering cocktails/index.html.erb within layouts/application
+  [1m[36mCocktail Load (0.5ms)[0m  [1m[34mSELECT "cocktails".* FROM "cocktails"[0m
+  ↳ app/views/cocktails/index.html.erb:5
+  Rendered cocktails/index.html.erb within layouts/application (8.5ms)
+  Rendered layouts/_navbar.html.erb (5.6ms)
+Completed 200 OK in 117ms (Views: 112.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/cocktails" for 127.0.0.1 at 2018-11-23 17:55:45 +0100
+Processing by CocktailsController#index as HTML
+  Rendering cocktails/index.html.erb within layouts/application
+  [1m[36mCocktail Load (1.2ms)[0m  [1m[34mSELECT "cocktails".* FROM "cocktails"[0m
+  ↳ app/views/cocktails/index.html.erb:5
+  Rendered cocktails/index.html.erb within layouts/application (6.7ms)
+  Rendered layouts/_navbar.html.erb (4.8ms)
+Completed 200 OK in 120ms (Views: 115.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/cocktails/7" for 127.0.0.1 at 2018-11-23 17:55:49 +0100
+Processing by CocktailsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCocktail Load (0.7ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/cocktails_controller.rb:27
+  Rendering cocktails/show.html.erb within layouts/application
+  [1m[36mDose Load (0.6ms)[0m  [1m[34mSELECT "doses".* FROM "doses" WHERE "doses"."cocktail_id" = $1[0m  [["cocktail_id", 7]]
+  ↳ app/views/cocktails/show.html.erb:12
+  Rendered cocktails/show.html.erb within layouts/application (9.8ms)
+  Rendered layouts/_navbar.html.erb (4.5ms)
+Completed 200 OK in 120ms (Views: 109.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/cocktails" for 127.0.0.1 at 2018-11-23 17:56:09 +0100
+Processing by CocktailsController#index as HTML
+  Rendering cocktails/index.html.erb within layouts/application
+  [1m[36mCocktail Load (1.3ms)[0m  [1m[34mSELECT "cocktails".* FROM "cocktails"[0m
+  ↳ app/views/cocktails/index.html.erb:5
+  Rendered cocktails/index.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_navbar.html.erb (3.0ms)
+Completed 200 OK in 122ms (Views: 115.3ms | ActiveRecord: 1.3ms)
+
+
