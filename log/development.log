@@ -5433,3 +5433,16 @@ Processing by CocktailsController#index as HTML
 Completed 200 OK in 123ms (Views: 117.4ms | ActiveRecord: 0.4ms)
 
 
+  [1m[35m (29.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(672984542578094145)[0m
+  ↳ bin/rails:9
+  [1m[35m (7.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddPhotoToArticles (20181123111004)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (32.8ms)[0m  [1m[35mALTER TABLE "articles" ADD "photo" character varying[0m
+  ↳ db/migrate/20181123111004_add_photo_to_articles.rb:3
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(672984542578094145)[0m
+  ↳ bin/rails:9
